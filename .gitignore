@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# VSCode
+.vscode/
+
+# macOS / Linux Files
+.DS_Store
+Thumbs.db
+
+# Models & Indexes
+models/embeddings_model/
+models/faiss_index.bin
+models/*.pt
+models/*.bin
+
+# User Data (keep privacy)
+data/history/
+data/error_log/
+
+# Logs
+*.log
+
+# Cache
+.cache/
+faiss_cache/
+
+# Virtual environment
+.venv/
+env/
