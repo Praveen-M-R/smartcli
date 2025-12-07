@@ -1,0 +1,105 @@
+{
+  "patterns": [
+    {
+      "pattern": "permission denied",
+      "category": "permissions",
+      "fixes": [
+        "Try using sudo: sudo <command>",
+        "Check file permissions: ls -l <file>",
+        "Change permissions: chmod +x <file>"
+      ],
+      "description": "Permission error when executing command"
+    },
+    {
+      "pattern": "command not found",
+      "category": "not_found",
+      "fixes": [
+        "Install the command using your package manager",
+        "Check if the command is in your PATH: echo $PATH",
+        "Try using the full path to the executable"
+      ],
+      "description": "Command not found in PATH"
+    },
+    {
+      "pattern": "No such file or directory",
+      "category": "file_not_found",
+      "fixes": [
+        "Check the file path: ls <directory>",
+        "Create the directory: mkdir -p <directory>",
+        "Verify you're in the correct directory: pwd"
+      ],
+      "description": "File or directory does not exist"
+    },
+    {
+      "pattern": "git.*Your local changes.*would be overwritten",
+      "category": "git",
+      "fixes": [
+        "Stash your changes: git stash",
+        "Commit your changes: git add . && git commit -m 'message'",
+        "Discard changes: git checkout -- ."
+      ],
+      "description": "Git merge/pull would overwrite local changes"
+    },
+    {
+      "pattern": "git.*fatal: not a git repository",
+      "category": "git",
+      "fixes": [
+        "Initialize git repository: git init",
+        "Clone a repository: git clone <url>",
+        "Navigate to a git repository directory"
+      ],
+      "description": "Not inside a git repository"
+    },
+    {
+      "pattern": "npm.*EACCES.*permission denied",
+      "category": "npm",
+      "fixes": [
+        "Fix npm permissions: sudo chown -R $USER ~/.npm",
+        "Use npx instead of global install",
+        "Configure npm to use a different directory"
+      ],
+      "description": "NPM permission error"
+    },
+    {
+      "pattern": "pip.*externally-managed-environment",
+      "category": "python",
+      "fixes": [
+        "Use a virtual environment: python -m venv venv && source venv/bin/activate",
+        "Use pipx for tools: pipx install <package>",
+        "Use --break-system-packages (not recommended)"
+      ],
+      "description": "PIP externally managed environment (PEP 668)"
+    },
+    {
+      "pattern": "docker.*Cannot connect to the Docker daemon",
+      "category": "docker",
+      "fixes": [
+        "Start Docker daemon: sudo systemctl start docker",
+        "Add user to docker group: sudo usermod -aG docker $USER",
+        "Check Docker status: sudo systemctl status docker"
+      ],
+      "description": "Cannot connect to Docker daemon"
+    },
+    {
+      "pattern": "disk.*full|No space left on device",
+      "category": "disk",
+      "fixes": [
+        "Check disk usage: df -h",
+        "Find large files: du -sh * | sort -h",
+        "Clean package cache (Ubuntu/Debian): sudo apt-get clean",
+        "Clean Docker: docker system prune -a"
+      ],
+      "description": "Disk full error"
+    },
+    {
+      "pattern": "port.*already in use",
+      "category": "network",
+      "fixes": [
+        "Find process using port: lsof -i :<port>",
+        "Kill process: kill -9 <pid>",
+        "Use a different port in your configuration"
+      ],
+      "description": "Port already in use"
+    }
+  ]
+}
